@@ -58,3 +58,43 @@ const createStore = (reducer) => {
   return { getState, dispatch, subscribe }
 }
 ```
+
+## Reducer와 State
+- State는 불변의 객체로 이뤄져야 한다. 간단한 예를 들어 Object.freeze를 통해 Object의 불변 객체로 만들어줄 수 있다.
+
+```js
+const state = {
+  a: 1
+}
+
+Object.freeze(state);
+```
+
+하지만 freeze는 얕은 동결만 지원한다. 만약 깊은 동결을 해야하는 경우 아래와 같이 재귀함수를 통해 지원할 수 있다.
+
+```js
+const state = {
+  a: {
+    b: 1
+  }
+};
+
+function deepFreeze (obj) {
+  var propNames = Object.getOwnPropertyNames(obj);
+  for (let name of propNames) {
+    let value = obj[name];
+  
+    obj[name] = value && typeof value === "object" ? 
+    deepFreeze(value) : value;
+    console.log(obj[name]);
+  }
+  return Object.freeze(obj);
+}
+deepFreeze(state);
+```
+
+## State
+- 
+- 모듈 단위의 상태
+- `앱 전체 상태 트리`를 가지고 있는 스토어
+- 핵심은 단일 객체 트리를 가지고 있어야 함
