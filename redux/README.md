@@ -98,3 +98,81 @@ deepFreeze(state);
 - 모듈 단위의 상태
 - `앱 전체 상태 트리`를 가지고 있는 스토어
 - 핵심은 단일 객체 트리를 가지고 있어야 함
+
+Todo Store에 대한 Reducer는 다음과 같다.
+
+```js
+const todo = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return {
+        id: action.id,
+        text: action.text,
+        completed: false
+      };
+    case 'TOGGLE_TODO':
+      if (state.id === action.id) {
+        return {
+          ...state,
+          completed: !state.completed,
+        };
+      }
+      return state;
+    default:
+      return state;
+  }
+}
+
+const todos = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...state,
+        todo(undefined, action)
+      ];
+    case 'TOGGLE_TODO':
+      return state.map(t => todo(t, action));
+    default:
+      return state;
+  }
+};
+```
+
+여기에서 필터 기능을 추가하기 위해 visibilityFilter Reducer 함수를 추가한다.
+
+```js
+const visibilityFilter = (state = "SHOW_ALL", action) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter;
+    default:
+      return state;
+  }
+}
+```
+
+두개의 Reducer를 아래와 같이 결합 될 수 있다.
+
+```js
+const todoApp = (state = {}, action) => {
+  return {
+    todos: todos(
+      state.todos,
+      action
+    ),
+    visibilityFilter: visibilityFilter(
+      state.vivisibilityFilter,
+      action
+    )
+  }
+}
+```
+
+하지만 다행히도 리덕스에서는 이러한 API를 combineReducer 라는 메소드로 제공한다.
+
+```js
+const todoApp = combineReducer({
+  todos,
+  visibilityFilter
+})
+```
