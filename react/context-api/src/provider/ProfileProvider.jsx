@@ -1,5 +1,5 @@
 import React from "react";
-import { ProfileProvider } from "./ProfileContext";
+import { ProfileProvider } from "../context/ProfileContext";
 
 class ProfileProviderWrapper extends React.Component {
   state = {

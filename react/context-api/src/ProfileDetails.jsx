@@ -1,5 +1,5 @@
 import React from "react";
-import { ProfileConsumer } from "./ProfileContext";
+import { ProfileConsumer } from "./context/ProfileContext";
 
 const ProfileDetails = () => (
   <div>
