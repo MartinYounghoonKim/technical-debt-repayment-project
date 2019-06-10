@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import ProfileWrapper from "./ProfileWrapper";
-import {ProfilePrivider} from "./ProfileContext";
+import ProfileProviderWrapper from "./ProfileProvider";
+import ProfileDetails from "./ProfileDetails";
 
 class App extends Component {
-  state = {
-    name: "Martin",
-    age: "19"
-  };
-
   render() {
     return (
       <div className="App">
-        <ProfilePrivider value={this.state}>
+        <ProfileProviderWrapper>
           <ProfileWrapper />
-        </ProfilePrivider>
+        </ProfileProviderWrapper>
+        <ProfileDetails />
       </div>
     );
   }
