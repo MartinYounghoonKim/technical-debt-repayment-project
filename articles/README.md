@@ -47,6 +47,8 @@
 - [멘토는 없다](http://m.hani.co.kr/arti/opinion/column/895679.html?_fr=fb&fbclid=IwAR2sZA2VrJtMFdtvwKP9gFO5wFGCw2iBHrn-AO2yl0SQj36-LKp3TZd2X0E#cb)
 - [일 못하는 사람의 6가지 특징](https://jolggu.tistory.com/622?fbclid=IwAR38AaRK0oCQuAR23GoNy_9SDnjbbhRmroSW7oXx2dtJzuKya7PG109VVwo)
 - [내 주변의 지치지 않는 많은 성공한 사람들](https://jolggu.tistory.com/634?fbclid=IwAR3UCfjSFjINLbj1j00dP-XU9a4y-Md7_9QzwxS1IO8fQGLfsbCZ12H8Bl8)
+- [나는 왜 회사를 즐겁게 다니고 있나?](https://brunch.co.kr/@imagineer/314?utm_source=gaerae.com&utm_campaign=%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%EB%9F%BD%EB%8B%A4&utm_medium=social&fbclid=IwAR1e9iuKVYEaoDIat3h_kChpetz91Dpf-ZQLi55EPMUJLErcVeBHym494T8)
+- [싸우지 않고 이기는 7가지 기술](http://moneyman.kr/archives/2653?fbclid=IwAR1hluxPgeN9yqJ6KLPfo09ltUTD4eoRX5rjXPXX4cllYjRezfrYTehCiEE)
 
 ## 읽기 좋은 글이 많은 작가 혹은 플랫폼
 - [아웃스탠딩](https://outstanding.kr/)
