@@ -40,4 +40,53 @@ export default function* () {
 
 만약 fetchUser 함수가 PENDING 상태일 때 다시 "FETCH_USER" 액션이 디스패치된다면 PENDING 상태의 기존 함수를 취소하고 최근 함수를 실행시킨다.
 
+## 사가 함수가 여러개일 경우
+만약 아래의 상황과 같이 사가 함수가 여러개 일때는 각각의 함수를 단일 entry 포인트로 감싼 후 saga의 middleware에 주입해주어야 한다.
+
+```typescript
+// userSaga.ts
+// ...
+function* fetchUser (action: IFetchUser) {
+  const { uid } = action.payload;
+  yield put({ type: "FETCH_USER_REQUEST" });
+  try {
+    const response = yield call(fetchUserService, { uid });
+    yield put({ type: "FETCH_USER_SUCCESS" }, response.data);
+  } catch (e) {
+    yield put({ type: "FETCH_USER_FAILURE" }, response.message);
+  }
+}
+
+export default function* () {
+  yield takeEvery(FETCH_USER, fetchUser);
+}
+
+// todoSaga.ts
+function* fetchTodos () {
+  yield put({ type: "FETCH_TODOS_REQUEST" });
+  try {
+    const response = yield call(fetchUserService, { uid });
+    yield put({ type: "FETCH_TODOS_SUCCESS" }, response.data);
+  } catch (e) {
+    yield put({ type: "FETCH_TODOS_FAILURE" }, response.message);
+  }
+}
+
+export default function* () {
+  yield takeEvery(FETCH_TODOS, fetchTodos);
+}
+
+// root.ts
+export default function* rootSaga () {
+  yield all([
+    todoSaga(),
+    userSaga()
+  ])
+}
+
+// ...
+sagaMiddlewares.run(rootSaga)
+```
+
+
 
