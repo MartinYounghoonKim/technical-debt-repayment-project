@@ -93,12 +93,6 @@ function deepFreeze (obj) {
 deepFreeze(state);
 ```
 
-## State
-- 
-- 모듈 단위의 상태
-- `앱 전체 상태 트리`를 가지고 있는 스토어
-- 핵심은 단일 객체 트리를 가지고 있어야 함
-
 Todo Store에 대한 Reducer는 다음과 같다.
 
 ```js
