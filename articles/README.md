@@ -36,6 +36,7 @@
 ## 커뮤니케이션 챕터
 - [존댓말을 쓰는 리더](https://brunch.co.kr/@joonakim/5?utm_source=facebook.brunch_co_kr&utm_campaign=daily&fbclid=IwAR0k9NcCpUQ-nJNu9Fb3qx1qx-NTx_NVOy4BeICUjWfSxqZuaMfBd5X5zGQ)
 - [낮과 밤이 다른 회사](https://brunch.co.kr/@symriro/295)
+- [공감능력이 뛰어난 사람들의 5가지 습관](https://jolggu.tistory.com/52?fbclid=IwAR0aatyfKNxz0-jwTNYJWY-oLYje7wXZ2P_viKsxnASKE4HXzBtqlPOUFtU)
 
 ## 커리어에 대한 고민 챕터
 - [프로 직장인과 아마추어 직장인의 차이](https://brunch.co.kr/@book-writer/72)
@@ -49,6 +50,7 @@
 - [내 주변의 지치지 않는 많은 성공한 사람들](https://jolggu.tistory.com/634?fbclid=IwAR3UCfjSFjINLbj1j00dP-XU9a4y-Md7_9QzwxS1IO8fQGLfsbCZ12H8Bl8)
 - [나는 왜 회사를 즐겁게 다니고 있나?](https://brunch.co.kr/@imagineer/314?utm_source=gaerae.com&utm_campaign=%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%EB%9F%BD%EB%8B%A4&utm_medium=social&fbclid=IwAR1e9iuKVYEaoDIat3h_kChpetz91Dpf-ZQLi55EPMUJLErcVeBHym494T8)
 - [싸우지 않고 이기는 7가지 기술](http://moneyman.kr/archives/2653?fbclid=IwAR1hluxPgeN9yqJ6KLPfo09ltUTD4eoRX5rjXPXX4cllYjRezfrYTehCiEE)
+- [개발자와 야근에 대한 흥미로운 사실...](https://brunch.co.kr/@supims/560?utm_source=gaerae.com&utm_campaign=%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%EB%9F%BD%EB%8B%A4&utm_medium=social&fbclid=IwAR1fWxmAPPxqCxVLU8OVVPB9Qehu9fzdTTh8BpL2OOaI9TgFVQgHJRFjpJo)
 
 ## 읽기 좋은 글이 많은 작가 혹은 플랫폼
 - [아웃스탠딩](https://outstanding.kr/)
