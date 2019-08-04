@@ -33,11 +33,13 @@
 ### 기타
 - [온 오프라인에서의 포카요케 사례](https://story.pxd.co.kr/319)
 - [해외 IT 기업 인터뷰 특징과 준비 과정에 대해](https://erokuma.tistory.com/entry/%ED%95%B4%EC%99%B8-IT-%EA%B8%B0%EC%97%85-%EC%9D%B8%ED%84%B0%EB%B7%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EC%A0%95%EB%A6%AC?fbclid=IwAR3snpzfMV46mxduxkOA_QLJ5LXEEnUarxTDWwXadN4zlJ0tUsZy3pWADFE)
+-[URL 끝에 ‘/’ 는 왜 붙이는 걸까?](https://djkeh.github.io/articles/Why-do-we-put-slash-at-the-end-of-URL-kor/?fbclid=IwAR2e2kBDmcqDZEIcWgykkymRwWHXQu4X9z344BSFPenQH5Js328ZPCqEynQ)
 
 ## 커뮤니케이션 챕터
 - [존댓말을 쓰는 리더](https://brunch.co.kr/@joonakim/5?utm_source=facebook.brunch_co_kr&utm_campaign=daily&fbclid=IwAR0k9NcCpUQ-nJNu9Fb3qx1qx-NTx_NVOy4BeICUjWfSxqZuaMfBd5X5zGQ)
 - [낮과 밤이 다른 회사](https://brunch.co.kr/@symriro/295)
 - [공감능력이 뛰어난 사람들의 5가지 습관](https://jolggu.tistory.com/52?fbclid=IwAR0aatyfKNxz0-jwTNYJWY-oLYje7wXZ2P_viKsxnASKE4HXzBtqlPOUFtU)
+- [왜 나는 진정한 친구가 ](https://brunch.co.kr/@jeonghac/23?utm_source=facebook.brunch_co_kr&utm_campaign=daily&fbclid=IwAR2mpm8OUieEgC4gQy5Kuj2X8nLSaWplN0fvyuPRNAh3ZFYVGYmpmfN3bQA)
 
 ## 커리어에 대한 고민 챕터
 - [프로 직장인과 아마추어 직장인의 차이](https://brunch.co.kr/@book-writer/72)
