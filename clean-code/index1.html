@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+1. 아무것도 없을 경우는 0을 return 한다.
+2. body 태그 바로 아래에 위치한다.
+
+<ul>
+  <li>Item:
+    <ol>
+      <li>Point:
+        <div>
+          <ul>
+            <li>elem1</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </li>
+  <li>elem2</li>
+</ul>
+<ul>
+  <li>simple list1</li>
+</ul>
+<ul>
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+  function solution () {
+    let result = 0;
+    const totalParentElement = document.querySelectorAll("body > ul, body > ol");
+    const parentElementSize = totalParentElement.length;
+    if (parentElementSize === 0) {
+      // ul, ol 등 아무것도 없을 경우는 0을 반환한다.
+      return 0;
+    }
+
+    for (let i = 0; i < parentElementSize; i++) {
+      const childrenElementSize = totalParentElement[i].querySelectorAll("ol, ul").length;
+      if (result < childrenElementSize) {
+        result = childrenElementSize;
+      }
+    }
+    return result + 1;
+  }
+  console.log(solution());
+</script>
+</body>
+</html>
