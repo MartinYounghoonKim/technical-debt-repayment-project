@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button type="button" id="button1">Button01</button>
+  <button type="button" id="button2">Button02</button><br/>
+  <button type="button" id="button3">Button03</button><br/>
+  <script>
+    for (var i = 1; i < 4; i++) {
+      document.getElementById(`button${i}`).addEventListener("click", function () {
+        console.log(i); // 전역 스코프의 i를 참조
+      });
+
+      // (function (i) {
+      //   document.getElementById(`button${i}`).addEventListener("click", function () {
+      //     console.log(i);
+      //   })
+      // })(i)
+    }
+    console.log(i); // 전역에 i 가 생긴다.
+  </script>
+</body>
+</html>

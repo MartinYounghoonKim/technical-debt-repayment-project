@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <button type="button" id="button1">button1</button>
+  <button type="button" id="button2">button2</button>
+  <button type="button" id="button3">button3</button>
+</body>
+<script>
+  for (var i = 1; i < 4; i++) {
+    (function () {
+      var a = i;
+      document.getElementById(`button${a}`).addEventListener("click", function () {
+        console.log(a);
+      });
+    })();
+  }
+</script>
+</body>
+</html>
