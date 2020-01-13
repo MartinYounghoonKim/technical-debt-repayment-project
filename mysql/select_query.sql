@@ -33,13 +33,6 @@ create table payment
         foreign key (uid) references user (uid)
 );
 
-# 정상적인 데이터 대입
-INSERT INTO payment
-VALUES (1, 1000);
-
-SELECT * FROM payment
-WHERE uid=1;
-
 # UNSIGNED 이기 때문에 음수값은 대입 불가능
 INSERT INTO payment
 VALUES (1, -1);
@@ -52,6 +45,21 @@ VALUES (1, 4294967295);
 INSERT INTO payment
 VALUES (1, 4294967296);
 
+create table payment1
+(
+    uid BIGINT not null,
+    total_consume_mount int(10) ZEROFILL default 0 not null
+);
+
+DESC payment1;
+# ZEROFILL 범위 안의 값을 대입(default 값 역시 자리수가 동일하게 채워짐)
+INSERT INTO payment1
+VALUES (1, 11);
+
+# 아래의 Query는 날렸을 떄, 0으로 채워지는 것을 확인할 수 있다.
+SELECT * FROM payment1
+WHERE uid=1;
+
 # Duplicate foreign key constraint name 'uid' 가 왜 뜨는 것일까?
 use select_tutorial;
 CREATE TABLE wallet (
@@ -61,18 +69,20 @@ CREATE TABLE wallet (
     constraint user_id
         foreign key (user_id) references user (uid)
 );
-# DECIMAL 범위 안의 값은 정상적으로 대입 가능
-INSERT INTO wallet
-VALUES (2, 10.91);
 
-INSERT INTO wallet
+DESC wallet;
+# DECIMAL 범위 안의 값은 정상적으로 대입 가능
+INSERT INTO wallet (user_id, dollar)
+VALUES (2, 10.91); # default를 0으로 부여했는데 왜 "Column count doesn't match value count at row" 에러가 뜨는지?
+
+INSERT INTO wallet (user_id, dollar)
 VALUES (2, 100.91);
 
-# DECIMAL 범위 안이더라도 자리수가 넘으면 짤린다.
-INSERT INTO wallet
-VALUES (2, 10.912);
+# DECIMAL 범위 안이더라도 자리수가 넘으면 짤린다. 라는 것처럼 표현하는데 실제 반올림이 된다. 왜일까?
+INSERT INTO wallet (user_id, dollar)
+VALUES (2, 10.917);
 
-INSERT INTO wallet
+INSERT INTO wallet (user_id, dollar)
 VALUES (1, 100.91231);
 
 # 허나 범위를 넘어가면 대입 불가능
@@ -81,7 +91,7 @@ VALUES (1, 1000.9);
 
 # FLOAT
 INSERT INTO wallet
-VALUES (2, 10.916, 10.916); # DECIMAL 은 자릿수 초과시 반올림
+VALUES (2, 10.916, 10.916);
 
 INSERT INTO wallet
 VALUES (2, 10.91, 10.91);
