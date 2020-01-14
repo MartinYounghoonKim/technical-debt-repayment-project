@@ -86,7 +86,7 @@ INSERT INTO wallet (user_id, dollar)
 VALUES (1, 100.91231);
 
 # 허나 범위를 넘어가면 대입 불가능
-INSERT INTO wallet
+INSERT INTO wallet (user_id, dollar)
 VALUES (1, 1000.9);
 
 # FLOAT
@@ -96,9 +96,12 @@ VALUES (2, 10.916, 10.916);
 INSERT INTO wallet
 VALUES (2, 10.91, 10.91);
 
+INSERT INTO wallet
+VALUES (2, 10.91, 10.91);
+
 SELECT * FROM wallet;
 
-SELECT SUM(dollar) FROM wallet WHERE user_id=2;
+SELECT SUM(dollar) decimal_type, SUM(mileage) float_type FROM wallet WHERE user_id=2;
 SELECT SUM(mileage) FROM wallet WHERE user_id=2; # FLOAT 값은 불분명함
 
 DROP TABLE wallet;
