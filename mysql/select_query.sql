@@ -17,7 +17,7 @@ CREATE TABLE user (
 INSERT INTO user
 VALUES (default, 'Martin', '1234567890', default);
 
-# CHAR의 범위를 초과하는 경우 에러가 난다. 만약 strict mode가 설정되어 있지 않다면 나머지 값은 길이에 맞게 짤리고 저장은 될 것이다.
+-- CHAR의 범위를 초과하는 경우 에러가 난다. 만약 strict mode 가 설정되어 있지 않다면 나머지 값은 길이에 맞게 짤리고 저장은 될 것이다.
 INSERT INTO user
 VALUES (default, 'Martin', '12345678900', default);
 
@@ -25,6 +25,7 @@ SELECT * FROM user;
 
 # UNSIGNED 키워드를 이용하여 payment 테이블 생성
 use select_tutorial;
+DROP TABLE payment;
 create table payment
 (
     uid BIGINT not null,
@@ -34,8 +35,10 @@ create table payment
 );
 
 # UNSIGNED 이기 때문에 음수값은 대입 불가능
-INSERT INTO payment
-VALUES (1, -1);
+INSERT INTO payment (uid)
+VALUES (1);
+
+select * from payment;
 
 # 최대값 대입 가능
 INSERT INTO payment
@@ -104,4 +107,71 @@ SELECT * FROM wallet;
 SELECT SUM(dollar) decimal_type, SUM(mileage) float_type FROM wallet WHERE user_id=2;
 SELECT SUM(mileage) FROM wallet WHERE user_id=2; # FLOAT 값은 불분명함
 
-DROP TABLE wallet;
+
+## TIME
+
+DROP TABLE time_table;
+CREATE TABLE time_table (
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    d DATE DEFAULT DATE(NOW()) NOT NULL,
+    dt DATETIME DEFAULT NOW() NOT NULL # ON UPDATE CURRENT_TIMESTAMP
+);
+
+# Reference https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-timestamp
+
+DESC time_table;
+SELECT NOW();
+SELECT CURTIME();
+SELECT DATE('2003-12-31 01:02:03');
+SELECT DATE(NOW());
+SELECT LOCALTIME;
+SELECT LOCALTIMESTAMP;
+
+SELECT CURRENT_DATE;
+SELECT CURRENT_TIME;
+SELECT CURRENT_TIMESTAMP;
+
+INSERT INTO time_table
+values (NOW(), CURRENT_TIMESTAMP);
+
+SELECT * FROM time_table;
+
+INSERT INTO time_table (d)
+VALUES (DATE('2003-12-31 01:02:03'));
+
+INSERT INTO time_table (dt)
+VALUES (NOW());
+
+DROP TABLE enum_test;
+CREATE TABLE enum_test (
+  size ENUM('x-small', 'small', 'medium', 'large', 'x-large') NOT NULL,
+  size2 ENUM('x-small', 'small', 'medium', 'large', 'x-large')
+);
+
+SELECT * FROM enum_test ORDER BY size;
+SELECT * FROM enum_test ORDER BY CAST(size AS CHAR);
+
+INSERT INTO enum_test
+VALUES (5, 4);
+
+-- reference: https://yahwang.github.io/posts/32
+CREATE TABLE set_test (
+   size SET('x-small', 'small', 'medium', 'large', 'x-large') -- 1, 2, 4, 8, 16
+);
+
+SELECT * FROM set_test WHERE size & 1 AND size & 4; -- 비트연산 활용 (자기 자신 Decimal 값)
+SELECT * FROM set_test WHERE size='x-small,medium';
+
+-- 아래의 query는 SELECT * FROM set_test WHERE size & 5; 와 같은 결과 반환
+SELECT * FROM set_test WHERE size LIKE '%x-small%';
+
+-- FIND_IN_SET 는 저장된 순서값을 반환(있냐 없냐 여부를 알 수 있다)
+SELECT FIND_IN_SET('x-large', size) as a FROM set_test;
+SELECT * FROM set_test WHERE FIND_IN_SET('x-small', size) > 0;
+SELECT FIND_IN_SET('m', size) as a FROM set_test;
+
+INSERT INTO set_test
+VALUES (16);
+
+-- 테이블 초기화
+TRUNCATE set_test;
